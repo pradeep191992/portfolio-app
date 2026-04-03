@@ -1,0 +1,14 @@
+[build]
+  command = "ng build"
+  publish = "dist/portfolio-app/browser"
+
+[build.environment]
+  # Netlify automatically pushes an experimental Angular Server-Side Rendering (SSR) plugin
+  # on Angular 17+ apps which can crash if versions are mismatched. 
+  # If you have a static portfolio, you should opt out.
+  NETLIFY_DISABLE_PLUGIN_ANGULAR = "true"
+  
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
