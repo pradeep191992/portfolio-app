@@ -201,26 +201,74 @@ export class PortfolioDataService {
             {
                 title: 'Enterprise Insurance Platform',
                 description: 'Leading performance optimization of an enterprise Angular application at Intact Insurance. Driving Angular Material migration, Storybook component library, and AI-powered development workflows with 600+ contributions.',
-                techStack: ['Angular', 'TypeScript', 'Angular Material', 'Storybook', 'AI Tools'],
-                featured: true
+                client: 'Intact Insurance',
+                yearSpan: '2025 - Present',
+                techStack: ['Enterprise Angular', 'TypeScript', 'Angular Material', 'Storybook', 'AI Tools'],
+                linkText: 'CURRENT FOCUS',
+                featured: true,
+                layoutClass: 'col-span-12 lg:col-span-8 flex-col md:flex-row gap-10',
+                imageLayoutClass: 'w-full md:w-3/5 rounded-2xl overflow-hidden aspect-video shadow-lg border border-slate-200 dark:border-white/10 group bg-slate-50 dark:bg-slate-900/50 flex flex-col items-center justify-center',
+                icon: 'corporate_fare'
             },
             {
-                title: 'SLB CDS — Oilfield Client Onboarding',
-                description: 'Built a complex client onboarding and order creation system for Schlumberger. Implemented 100+ reusable Angular components, achieving 25% reduction in development time and 20% faster load times via lazy loading.',
-                techStack: ['Angular', 'TypeScript', 'Tailwind CSS', 'REST APIs', 'RxJS'],
-                featured: true
+                title: 'SLB CDS — Client Onboarding',
+                description: 'Built a complex client onboarding and order creation system for Schlumberger. Implemented 100+ reusable Angular components, achieving 25% reduction in development time.',
+                client: 'Schlumberger (SLB)',
+                yearSpan: '2022 - 2025',
+                techStack: ['Angular', 'RxJS', 'Tailwind CSS', 'REST APIs'],
+                linkText: 'VIEW CASE STUDY',
+                featured: true,
+                layoutClass: 'col-span-12 lg:col-span-4 flex-col',
+                imageLayoutClass: 'rounded-2xl overflow-hidden aspect-square mb-8 shadow-md border border-slate-200 dark:border-white/10 group bg-slate-50 dark:bg-slate-900/50 flex flex-col items-center justify-center',
+                icon: 'inventory_2'
             },
             {
-                title: 'HomLuv — Home Search Platform',
-                description: 'Developed a feature-rich home search platform with Angular, creating reusable SCSS mixins, ensuring cross-browser compatibility, and collaborating closely with design teams on brand-consistent UI.',
+                title: 'HomLuv',
+                description: 'A premium PropTech marketplace. Developed a feature-rich home search platform with Angular, creating reusable SCSS mixins and collaborating closely on brand-consistent UI.',
+                client: 'BHI',
+                yearSpan: '2020 - 2022',
                 techStack: ['Angular', 'SCSS', 'JavaScript', 'Responsive Design', 'UI/UX'],
-                featured: false
+                linkText: 'CASE STUDY',
+                featured: true,
+                layoutClass: 'col-span-12 md:col-span-7 flex-col md:flex-row gap-8',
+                imageLayoutClass: 'md:w-1/2 rounded-2xl overflow-hidden aspect-video md:aspect-auto border border-slate-200 dark:border-white/10 group bg-slate-50 dark:bg-slate-900/50 flex flex-col items-center justify-center min-h-[200px]',
+                icon: 'real_estate_agent'
             },
             {
                 title: 'Reusable Component Library',
-                description: 'Built scalable, reusable Angular component libraries adopted consistently across multiple projects, significantly reducing development time across teams and ensuring design consistency.',
-                techStack: ['Angular', 'Storybook', 'TypeScript', 'SCSS', 'NX'],
-                featured: false
+                description: 'Built scalable, reusable Angular component libraries adopted consistently across multiple projects, significantly reducing development time across teams.',
+                yearSpan: '2019 - Present',
+                icon: 'widgets',
+                techStack: ['Storybook', 'NX'],
+                featured: false,
+                layoutClass: 'col-span-12 md:col-span-5 p-8 flex flex-col'
+            },
+            {
+                title: 'Adventesoft & Kaffeine',
+                description: 'Full-cycle corporate web development and performance tuning for leading tech consultancies.',
+                techStack: ['WordPress / PHP'],
+                icon: 'language',
+                borderClass: 'border-l-4 border-l-blue-500',
+                featured: false,
+                layoutClass: 'col-span-12 md:col-span-4 p-8'
+            },
+            {
+                title: 'Healthcare Portals',
+                description: 'Healthcare portals focusing on patient management systems utilizing PHP/MySQL architecture.',
+                techStack: ['LEGACY PHP'],
+                icon: 'clinical_notes',
+                borderClass: 'border-l-4 border-l-primary',
+                featured: false,
+                layoutClass: 'col-span-12 md:col-span-4 p-8'
+            },
+            {
+                title: 'Speed News India',
+                description: 'Dynamic media platform handling high-volume regional news syndication across India.',
+                techStack: ['EARLY CAREER'],
+                icon: 'newspaper',
+                borderClass: 'border-l-4 border-l-slate-400',
+                featured: false,
+                layoutClass: 'col-span-12 md:col-span-4 p-8'
             }
         ];
     }

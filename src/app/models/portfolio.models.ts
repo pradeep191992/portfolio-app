@@ -64,11 +64,18 @@ export interface Achievement {
 export interface Project {
     title: string;
     description: string;
+    client?: string;
+    yearSpan?: string;
     imageUrl?: string;
+    icon?: string;
     techStack: string[];
     liveUrl?: string;
     sourceUrl?: string;
-    featured: boolean;
+    featured?: boolean;
+    layoutClass?: string;
+    imageLayoutClass?: string;
+    borderClass?: string;
+    linkText?: string;
 }
 
 export interface Education {
