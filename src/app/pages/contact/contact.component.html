@@ -1,0 +1,112 @@
+<main class="max-w-6xl mx-auto px-6 py-24 lg:py-32">
+    <header class="mb-16" appScrollAnimate>
+        <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-6">
+            <span class="material-symbols-outlined text-sm">mail</span>
+            Get In Touch
+        </div>
+        <h2 class="text-4xl lg:text-6xl font-extrabold mb-6 tracking-tight text-slate-900 dark:text-white">
+            Let's Build <br />
+            <span class="text-primary">Something Great</span>
+        </h2>
+        <p class="max-w-2xl text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+            Have a project in mind or looking for a senior Angular consultant? I'd love to hear from you.
+        </p>
+    </header>
+
+    <div class="grid lg:grid-cols-12 gap-12">
+        <!-- Contact Form -->
+        <div class="lg:col-span-7" appScrollAnimate>
+            <form (ngSubmit)="onSubmit()" class="glass-card p-8 lg:p-10 rounded-2xl space-y-6">
+                <div>
+                    <label for="name"
+                        class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider">Name</label>
+                    <input id="name" type="text" [(ngModel)]="formData.name" name="name" required
+                        placeholder="Your name"
+                        class="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-5 py-3.5 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/30 transition-all text-sm" />
+                </div>
+                <div>
+                    <label for="email"
+                        class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider">Email</label>
+                    <input id="email" type="email" [(ngModel)]="formData.email" name="email" required
+                        placeholder="your@email.com"
+                        class="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-5 py-3.5 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/30 transition-all text-sm" />
+                </div>
+                <div>
+                    <label for="message"
+                        class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider">Message</label>
+                    <textarea id="message" [(ngModel)]="formData.message" name="message" required rows="5"
+                        placeholder="Tell me about your project..."
+                        class="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-5 py-3.5 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/30 transition-all text-sm resize-none"></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-xl font-bold text-lg transition-all accent-glow flex items-center justify-center gap-3 group">
+                    <span *ngIf="!submitted">Send Message</span>
+                    <span *ngIf="!submitted"
+                        class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
+                    <span *ngIf="submitted" class="flex items-center gap-2">
+                        <span class="material-symbols-outlined">check_circle</span>
+                        Message Sent!
+                    </span>
+                </button>
+            </form>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="lg:col-span-5 space-y-8">
+            <div appScrollAnimate animationDelay="150ms" class="glass-card p-8 rounded-2xl">
+                <h3 class="font-bold text-lg mb-6 flex items-center gap-2 text-slate-900 dark:text-white">
+                    <span class="material-symbols-outlined text-primary">person</span> Contact Info
+                </h3>
+                <div class="space-y-5">
+                    <a href="mailto:pradeepsaini1199@gmail.com" class="flex items-start gap-4 group">
+                        <span class="material-symbols-outlined text-primary mt-0.5">mail</span>
+                        <div>
+                            <p
+                                class="text-xs font-bold text-slate-600 dark:text-slate-500 uppercase tracking-wider mb-1">
+                                Email</p>
+                            <p
+                                class="text-slate-700 dark:text-slate-300 text-sm group-hover:text-primary transition-colors">
+                                pradeepsaini1199&#64;gmail.com</p>
+                        </div>
+                    </a>
+                    <a href="tel:+919599215144" class="flex items-start gap-4 group">
+                        <span class="material-symbols-outlined text-primary mt-0.5">phone</span>
+                        <div>
+                            <p
+                                class="text-xs font-bold text-slate-600 dark:text-slate-500 uppercase tracking-wider mb-1">
+                                Phone</p>
+                            <p
+                                class="text-slate-700 dark:text-slate-300 text-sm group-hover:text-primary transition-colors">
+                                +91 9599215144
+                            </p>
+                        </div>
+                    </a>
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-primary mt-0.5">location_on</span>
+                        <div>
+                            <p
+                                class="text-xs font-bold text-slate-600 dark:text-slate-500 uppercase tracking-wider mb-1">
+                                Location</p>
+                            <p class="text-slate-700 dark:text-slate-300 text-sm">Faridabad, India, 121004</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div appScrollAnimate animationDelay="300ms" class="glass-card p-8 rounded-2xl">
+                <h3 class="font-bold text-lg mb-6 flex items-center gap-2 text-slate-900 dark:text-white">
+                    <span class="material-symbols-outlined text-primary">share</span> Connect
+                </h3>
+                <div class="flex gap-4">
+                    <a *ngFor="let link of socialLinks" [href]="link.url" target="_blank" rel="noopener"
+                        class="w-12 h-12 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center hover:border-primary/50 hover:bg-primary/10 transition-all group">
+                        <svg class="w-5 h-5 fill-current text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors"
+                            viewBox="0 0 24 24">
+                            <path [attr.d]="link.svgPath" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </aside>
+    </div>
+</main>

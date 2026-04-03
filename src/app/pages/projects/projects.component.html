@@ -1,0 +1,68 @@
+<main class="max-w-6xl mx-auto px-6 py-24 lg:py-32">
+    <header class="mb-16" appScrollAnimate>
+        <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-6">
+            <span class="material-symbols-outlined text-sm">folder_special</span>
+            Portfolio
+        </div>
+        <h2 class="text-4xl lg:text-6xl font-extrabold mb-6 tracking-tight text-slate-900 dark:text-white">
+            Featured <br />
+            <span class="text-primary">Projects</span>
+        </h2>
+        <p class="max-w-2xl text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+            A selection of impactful projects spanning enterprise platforms, design systems, and performance
+            optimization.
+        </p>
+    </header>
+
+    <!-- Featured Projects -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div *ngFor="let project of featuredProjects; let i = index" appScrollAnimate
+            [animationDelay]="(i * 150) + 'ms'"
+            class="glass-card rounded-2xl overflow-hidden group hover:border-primary/30 transition-all duration-300">
+            <div class="p-8 h-full flex flex-col">
+                <div class="flex items-start justify-between mb-4">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <span class="material-symbols-outlined text-primary text-2xl">star</span>
+                    </div>
+                    <span
+                        class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-full uppercase tracking-widest">Featured</span>
+                </div>
+                <h3
+                    class="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
+                    {{ project.title }}</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-grow">{{
+                    project.description }}</p>
+                <div class="flex flex-wrap gap-2">
+                    <span *ngFor="let tech of project.techStack"
+                        class="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-lg">
+                        {{ tech }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Other Projects -->
+    <h3 appScrollAnimate class="text-xl font-bold text-slate-900 dark:text-white mb-8">Other Noteworthy Projects</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div *ngFor="let project of otherProjects; let i = index" appScrollAnimate [animationDelay]="(i * 150) + 'ms'"
+            class="glass-card p-6 rounded-xl hover:border-primary/30 transition-all duration-300 group">
+            <div class="flex items-center gap-3 mb-4">
+                <span
+                    class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">folder</span>
+                <h4 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                    {{ project.title }}
+                </h4>
+            </div>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-5">{{ project.description }}</p>
+            <div class="flex flex-wrap gap-2">
+                <span *ngFor="let tech of project.techStack"
+                    class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-transparent text-xs font-semibold rounded-lg">
+                    {{ tech }}
+                </span>
+            </div>
+        </div>
+    </div>
+</main>

@@ -3,9 +3,19 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Pradeep Saini | Senior Front-End Consultant</title>
+  <title>Pradeep Saini | Senior Consultant | Frontend Developer | Angular</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Pradeep Saini — Senior Frontend Developer with 10+ years of experience specialising in Angular development, performance optimisation, and scalable component architecture.">
+  <meta name="theme-color" content="#0a0f1a">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pradeep Saini | Senior Consultant | Angular Developer">
+  <meta property="og:description"
+    content="Senior Frontend Developer with 10+ years in Angular, TypeScript, and enterprise UI development.">
+  <meta property="og:type" content="website">
+
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -14,7 +24,14 @@
 
 </head>
 
-<body class="bg-background-dark text-slate-100 font-display selection:bg-primary selection:text-white">
+<body class="font-display selection:bg-primary selection:text-white">
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
   <app-root></app-root>
 </body>
 
